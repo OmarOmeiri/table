@@ -358,7 +358,7 @@ Returns all leaf-node columns in the table flattened to a single level. This doe
 type getColumn = (id: string) => Column<TData>
 ```
 
-Returns a single column by its ID.
+Returns a single column by its ID. In development mode, throws `ReferenceError` if the column ID does not exist.
 
 ### `getHeaderGroups`
 

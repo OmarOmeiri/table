@@ -169,6 +169,9 @@ export const Sorting: TableFeature = {
       },
       getSortingFn: () => {
         if (!column) {
+          if (process.env.NODE_ENV !== 'production') {
+            throw new ReferenceError('Column is not defined')
+          }
           throw new Error()
         }
 

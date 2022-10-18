@@ -179,6 +179,9 @@ export const Grouping: TableFeature = {
       },
       getAggregationFn: () => {
         if (!column) {
+          if (process.env.NODE_ENV !== 'production') {
+            throw new ReferenceError('Column is not defined')
+          }
           throw new Error()
         }
 

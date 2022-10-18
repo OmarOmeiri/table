@@ -219,7 +219,7 @@ export function createTable<TData extends RowData>(
 
       if (!row) {
         if (process.env.NODE_ENV !== 'production') {
-          throw new Error(`getRow expected an ID, but got ${id}`)
+          throw new ReferenceError(`getRow expected an ID, but got ${id}`)
         }
         throw new Error()
       }
